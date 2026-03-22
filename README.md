@@ -6,10 +6,10 @@
 
 A simple CLI-based database system written in **C** that supports query commands similar to SQL.
 
-```md
+---
+
 ## 👨‍💻 Author
 Afit Fajar Rianto
-```
 
 ---
 
@@ -42,12 +42,11 @@ Tanpa mengikuti format query yang benar, program tidak akan berjalan dengan baik
 ---
 
 ## 🗄️ Database Structure
-```md
 
 - **MAHASISWA** → menyimpan data mahasiswa (NIM, Nama, Prodi)
 - **MK** → menyimpan data mata kuliah (Kode, Nama, SKS)
 - **NILAI** → menyimpan nilai mahasiswa (NIM, Kode MK, Nilai, Grade)
-``` 
+
 ---
 
 ## 📂 Project Structure
