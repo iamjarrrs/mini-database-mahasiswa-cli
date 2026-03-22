@@ -41,6 +41,15 @@ Tanpa mengikuti format query yang benar, program tidak akan berjalan dengan baik
 
 ---
 
+```md
+## 🗄️ Database Structure
+
+- **MAHASISWA** → menyimpan data mahasiswa (NIM, Nama, Prodi)
+- **MK** → menyimpan data mata kuliah (Kode, Nama, SKS)
+- **NILAI** → menyimpan nilai mahasiswa (NIM, Kode MK, Nilai, Grade)
+``` 
+---
+
 ## 📂 Project Structure
 ```bash
 .
@@ -84,4 +93,16 @@ gcc src/main.c src/machine.c src/design.c -o app
 ### ❌ Delete Data
 ![Delete Mahasiswa](preview/DELETE%20Mahasiswa.png)
 
+---
+
+## ⚠️ Limitations
+- Tidak menggunakan database nyata (masih file `.dat`)
+- Belum mendukung query kompleks (WHERE, JOIN, dll)
+- Case-sensitive input
+
+---
+## 🚀 Future Improvements
+- Add WHERE (search query)
+- Add sorting data
+- Improve CLI UI
 ---
