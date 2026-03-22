@@ -1,0 +1,73 @@
+# 💻 Mini Database Mahasiswa (CLI)
+
+A simple CLI-based database system written in **C** that supports query commands similar to SQL.
+
+---
+
+## 🚨 SEBELUM ANDA MULAI
+
+📌 **Harap baca dokumentasi query terlebih dahulu:**
+
+👉 **[QUERY_GUIDE.md](QUERY_GUIDE.md)**
+
+Tanpa mengikuti format query yang benar, program tidak akan berjalan dengan baik.
+
+---
+
+## ✨ Features
+- Query-based system:
+  - SHOW
+  - INSERT
+  - UPDATE
+  - DELETE
+- Manage data:
+  - 👨‍🎓 Mahasiswa
+  - 📚 Mata Kuliah (MK)
+  - 📝 Nilai
+- CLI table output
+- File-based storage (`.dat`)
+
+---
+
+## 📂 Project Structure
+```bash
+.
+├── data/
+│   ├── mahasiswa.dat
+│   ├── mk.dat
+│   └── nilai.dat
+│
+├── src/
+│   ├── main.c
+│   ├── machine.c
+│   ├── design.c
+│   └── header.h
+├── preview/
+│   
+├── QUERY_GUIDE.md
+└── README.md 
+```
+--- 
+
+## 🚀 How to Run 
+### Compile
+```bash
+gcc src/main.c src/machine.c src/design.c -o app 
+
+```
+
+---
+
+## 📸 Preview
+
+### 🔍 Show Data
+![Show Mahasiswa](preview/SHOW%20MAHASISWA.png)
+
+### ➕ Insert Data
+![Insert Mahasiswa](preview/INSERT%20MAHASISWA.png)
+
+### ✏️ Update Data
+![Update Mahasiswa](preview/UPDATE%20MAHASISWA.png)
+
+### ❌ Delete Data
+![Delete Mahasiswa](preview/DELETE%20Mahasiswa.png)
