@@ -9,6 +9,7 @@ A simple CLI-based database system written in **C** that supports query commands
 ```md
 ## 👨‍💻 Author
 Afit Fajar Rianto
+```
 
 ---
 
