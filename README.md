@@ -41,8 +41,8 @@ Tanpa mengikuti format query yang benar, program tidak akan berjalan dengan baik
 
 ---
 
-```md
 ## 🗄️ Database Structure
+```md
 
 - **MAHASISWA** → menyimpan data mahasiswa (NIM, Nama, Prodi)
 - **MK** → menyimpan data mata kuliah (Kode, Nama, SKS)
