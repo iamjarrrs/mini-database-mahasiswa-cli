@@ -6,6 +6,10 @@
 
 A simple CLI-based database system written in **C** that supports query commands similar to SQL.
 
+```md
+## 👨‍💻 Author
+Afit Fajar Rianto
+
 ---
 
 ## 🚨 SEBELUM ANDA MULAI
@@ -80,6 +84,3 @@ gcc src/main.c src/machine.c src/design.c -o app
 ![Delete Mahasiswa](preview/DELETE%20Mahasiswa.png)
 
 ---
-```md
-## 👨‍💻 Author
-Afit Fajar Rianto
