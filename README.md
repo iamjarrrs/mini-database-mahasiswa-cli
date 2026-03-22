@@ -1,5 +1,9 @@
 # 💻 Mini Database Mahasiswa (CLI)
 
+![C](https://img.shields.io/badge/language-C-blue)
+![CLI](https://img.shields.io/badge/interface-CLI-green)
+![Status](https://img.shields.io/badge/status-finished-brightgreen)
+
 A simple CLI-based database system written in **C** that supports query commands similar to SQL.
 
 ---
@@ -8,7 +12,10 @@ A simple CLI-based database system written in **C** that supports query commands
 
 📌 **Harap baca dokumentasi query terlebih dahulu:**
 
-👉 **[QUERY_GUIDE.md](QUERY_GUIDE.md)**
+## 📖 Documentation
+
+Full query guide available here:  
+👉 [QUERY_GUIDE.md](QUERY_GUIDE.md)
 
 Tanpa mengikuti format query yang benar, program tidak akan berjalan dengan baik.
 
@@ -71,3 +78,8 @@ gcc src/main.c src/machine.c src/design.c -o app
 
 ### ❌ Delete Data
 ![Delete Mahasiswa](preview/DELETE%20Mahasiswa.png)
+
+---
+```md
+## 👨‍💻 Author
+Afit Fajar Rianto
