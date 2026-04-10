@@ -1,0 +1,156 @@
++---------------------------------------------------------------------------+
+|                                                                           |
+| GUIDE TO RUNNING THE PROGRAM                                              |
+|                                                                           |
+|                                                                           |
+| Program ini adalah sistem database sederhana berbasis                     |
+| bahasa C yang digunakan untuk mengelola data:                             |
+| - Mahasiswa                                                               |
+| - Mata Kuliah                                                             |
+| - Nilai                                                                   |
+| Program bekerja menggunakan file .dat sebagai penyimpanan data            |
+| dan menerima input berbentuk query (mirip SQL sederhana).                 |
+|                                                                           |
+| FORMAT PERINTAH (QUERY):                                                  |
+| note : Gunakan tanda ';' di setiap akhir query, jika tidak menggunakannya |
+| akan error.                                                               |
+|                                                                           |
+| 1.INSERT                                                                  |
+|   Mahasiswa :                                                             |
+|       INSERT MAHASISWA <nim> <nama> <prodi>;                              |
+|       Contoh : INSERT MAHASISWA 12345 Fajar Informatika;                  |
+|    
+|   Mata Kuliah :
+|       INSERT MK <kodeMK> <namaMK> <sks>;
+|       Contoh : INSERT MK MK001 Algoritma 3;
+|
+|   NILAI :
+|       INSERT NILAI <nim> <kodeMK> <nilai> <grade>;
+|       Contoh : INSERT NILAI 12345 MK001 85 A;
+|   note : Untuk insert Mata Kuliah pastikan kode sudah ada di tabel Mata Kuliah
+|
+| 2.SHOW (Menampilkan Data)
+|   SHOW MAHASISWA; --> untuk menampilkan data mahasiswa 
+|   SHOW MK;        --> untuk menampilkan data mata kuliah
+|   SHOW NILAI;     --> untuk menampilkan data nilai
+|   SHOW TABLES;    --> untuk mengetahui ada tabel apa saja di database ini
+|
+| 3.UPDATE (Mengubah/Mengupdate Data)
+|   MAHASISWA :
+|       UPDATE MAHASISWA <nim> <namaBaru> <prodiBaru>;
+|
+|   MATA KULIAH :
+|       UPDATE MK <kodeMK> <namaBaru> <sksBaru>;
+|
+|   NILAI :
+|       UPDATE NILAI <nim> <kodeMK> <nilaiBaru> <grade>;
+|
+| 4.DELETE (Menghapus Data)
+|   Mahasiswa :
+|       DELETE MAHASISWA <nim>;
+|
+|   MATA KULIAH :
+|       DELETE MK <kodeMK>;
+|
+|   NILAI :
+|       DELETE NILAI <nim>;
+|
+| 5.EXIT (Keluar Program) :
+|   EXIT;
+|
+|
+| CATATAN PENTING : 
+| - Data disimpan otomatis ke file setiap ada perubahan
+| - Data diurutkan (sorting) berdasarkan:
+|       - NIM (Mahasiswa & Nilai)
+|       - Kode MK (Mata Kuliah)
+| - Tidak boleh ada:
+|       - NIM duplikat
+|       - Kode MK duplikat
+|       - Nilai ganda untuk NIM + MK yang sama
+
++---------------------------------------------------------------------------+
+|                                                                           |
+|                     GUIDE TO RUNNING THE PROGRAM                          |
+|                                                                           |
++---------------------------------------------------------------------------+
+|                                                                           |
+| Program ini adalah sistem database sederhana berbasis bahasa C yang       |
+| digunakan untuk mengelola data:                                           |
+|   - Mahasiswa                                                             |
+|   - Mata Kuliah                                                           |
+|   - Nilai                                                                 |
+|                                                                           |
+| Program bekerja menggunakan file .dat sebagai penyimpanan data dan        |
+| menerima input berbentuk query (mirip SQL sederhana).                     |
+|                                                                           |
++---------------------------------------------------------------------------+
+| FORMAT PERINTAH (QUERY):                                                  |
+|                                                                           |
+| Note: Gunakan tanda ';' di setiap akhir query, jika tidak maka akan error |
+|                                                                           |
+| 1. INSERT                                                                 |
+|    Mahasiswa :                                                            |
+|       INSERT MAHASISWA <nim> <nama> <prodi>;                              |
+|       Contoh : INSERT MAHASISWA 12345 Fajar Informatika;                  |
+|                                                                           |
+|    Mata Kuliah :                                                          |
+|       INSERT MK <kodeMK> <namaMK> <sks>;                                  |
+|       Contoh : INSERT MK MK001 Algoritma 3;                               |
+|                                                                           |
+|    Nilai :                                                                |
+|       INSERT NILAI <nim> <kodeMK> <nilai> <grade>;                        |
+|       Contoh : INSERT NILAI 12345 MK001 85 A;                             |
+|                                                                           |
+|    Note: Pastikan kode MK sudah ada sebelum insert nilai                  |
+|                                                                           |
++---------------------------------------------------------------------------+
+| 2. SHOW (Menampilkan Data)                                                |
+|                                                                           |
+|    SHOW MAHASISWA;   --> Menampilkan data mahasiswa                       |
+|    SHOW MK;          --> Menampilkan data mata kuliah                     |
+|    SHOW NILAI;       --> Menampilkan data nilai                           |
+|    SHOW TABLES;      --> Menampilkan daftar tabel                         |
+|                                                                           |
++---------------------------------------------------------------------------+
+| 3. UPDATE (Mengubah Data)                                                 |
+|                                                                           |
+|    MAHASISWA :                                                            |
+|       UPDATE MAHASISWA <nim> <namaBaru> <prodiBaru>;                      |
+|                                                                           |
+|    MATA KULIAH :                                                          |
+|       UPDATE MK <kodeMK> <namaBaru> <sksBaru>;                            |
+|                                                                           |
+|    NILAI :                                                                |
+|       UPDATE NILAI <nim> <kodeMK> <nilaiBaru> <grade>;                    |
+|                                                                           |
++---------------------------------------------------------------------------+
+| 4. DELETE (Menghapus Data)                                                |
+|                                                                           |
+|    MAHASISWA :                                                            |
+|       DELETE MAHASISWA <nim>;                                             |
+|                                                                           |
+|    MATA KULIAH :                                                          |
+|       DELETE MK <kodeMK>;                                                 |
+|                                                                           |
+|    NILAI :                                                                |
+|       DELETE NILAI <nim>;                                                 |
+|                                                                           |
++---------------------------------------------------------------------------+
+| 5. EXIT (Keluar Program)                                                  |
+|                                                                           |
+|    EXIT;                                                                  |
+|                                                                           |
++---------------------------------------------------------------------------+
+| CATATAN PENTING :                                                         |
+|                                                                           |
+| - Data disimpan otomatis ke file setiap ada perubahan                     |
+| - Data diurutkan (sorting) berdasarkan:                                   |
+|     • NIM (Mahasiswa & Nilai)                                             |
+|     • Kode MK (Mata Kuliah)                                               |
+| - Tidak boleh ada:                                                        |
+|     • NIM duplikat                                                        |
+|     • Kode MK duplikat                                                    |
+|     • Nilai ganda (NIM + MK yang sama)                                    | 
+|                                                                           |
++---------------------------------------------------------------------------+

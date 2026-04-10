@@ -43,7 +43,8 @@
 typedef struct{
     char nim[10];
     char nama[50];
-    char prodi[50];
+    char kodeMK[50];
+    char idProdi[10];
 } mahasiswa;
 
 /* typedef struct mataKuliah; */
@@ -60,51 +61,72 @@ typedef struct{
     char grade[3];
 } nilai;
 
+typedef struct {
+    char idProdi[10];
+    char prodi[50];
+} prodi;
+
+
 
 // fungsi cetak garis
-#define PRINT_LINE(l, r, mid, w1, w2, w3) \
+#define PRINT_LINE(l, r, mid, w1, w2, w3, w4) \
     printf("%s", l); \
     for(int _i=0;_i<w1+2;_i++) printf("\xe2\x94\x80"); \
     printf("%s", mid); \
     for(int _i=0;_i<w2+2;_i++) printf("\xe2\x94\x80"); \
     printf("%s", mid); \
     for(int _i=0;_i<w3+2;_i++) printf("\xe2\x94\x80"); \
+    printf("%s", mid); \
+    for(int _i=0;_i<w4+2;_i++) printf("\xe2\x94\x80"); \
     printf("%s\n", r);
 
 // === BANNER ===
 void banner();
 void desc();
 void showTabels();
+void showHelp();
 
 // === PROSEDUR WRITE TO FILE ===
 void writeToFileNameMhs(int n, mahasiswa source[], char fileName[]);
 void writeToFileNameMk(int n, mataKuliah source[], char fileName[]);
 void writeToFileNameNilai(int n, nilai source[], char fileName[]);
+void writeFileNameProdi(int n, prodi source[], char fileName[]);
 
 // === PROSEDUR READ FROM FILE ===
 void readFileNameMhs(int *n, mahasiswa source[], char fileName[]);
 void readFileNameMk(int *n, mataKuliah source[], char fileName[]);
 void readFileNameNilai(int *n, nilai source[], char fileName[]);
+void readFileNameProdi(int *n, prodi source[], char fileName[]);
 
 // === PROSEDUR SHOW DATA ===
 void showDataMhs(int *n, mahasiswa source[]);
 void showDataMk(int *n, mataKuliah source[]);
 void showDataNilai(int *n, nilai source[]);
+void showDataProdi(int *n, prodi source[]);
 
 // === PROSEDUR UPDATE FILE ===
 void updateFileNameMhs(char *query, int *n, mahasiswa source[]);
 void updateFileNameMk(char *query, int *n, mataKuliah source[]);
 void updateFileNameNilai(char *query, int *n, nilai source[]);
+void updateFileNameProdi(char *query, int *n, prodi source[]);
 
 // === PROSEDUR DELETE FILE ===
 void deleteMahasiswa(char *query, int *n ,mahasiswa *source);
 void deleteMataKuliah(char *query, int *n ,mataKuliah *source);
 void deleteNilai(char *query, int *n ,nilai *source);
+void deleteProdi(char *query, int *n, prodi *source);
 
 // === PROSEDUR INPUT DATA ===
 void insertMahasiswa(char *query, mahasiswa *source, int *n);
 void insertmataKuliah(char *query, mataKuliah *source, int *n);
 void insertNilai(char *query, nilai *source, int *n, mataKuliah *sourceMk, int *nMK);
+void insertProdi(char *query, prodi *source, int *n);
 
 // === PROSEDUR PARSE INPUT ===
-void parseInput(char query[], int *n, int *nMK, int *nNilai, mahasiswa source[], mataKuliah sourceMk[], nilai sourceNilai[], int *running);
+void parseInput(char query[], int *n, int *nMK, int *nNilai, int *nProdi, mahasiswa source[], mataKuliah sourceMk[], nilai sourceNilai[], prodi sourceProdi[], int *running);
+// === Fungsi cek data ===
+int cekMK(char *kodeMK, char fileName[]);
+int cekProdi(char *idProdi, char fileName[]);
+
+// === PROSEDUR JOIN ===
+void showJoin(mahasiswa m[], int nMhs, prodi p[], int nProdi, mataKuliah mk[], int nMK, nilai ni[], int nNilai);

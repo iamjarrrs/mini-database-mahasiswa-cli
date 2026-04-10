@@ -27,81 +27,67 @@ Tanpa mengikuti format query yang benar, program tidak akan berjalan dengan baik
 ---
 
 ## ✨ Features
+
 - Query-based system:
-  - SHOW
-  - INSERT
-  - UPDATE
-  - DELETE
+  - `SHOW`
+  - `INSERT`
+  - `UPDATE`
+  - `DELETE`
 - Manage data:
   - 👨‍🎓 Mahasiswa
   - 📚 Mata Kuliah (MK)
   - 📝 Nilai
-- CLI table output
+  - 🏫 Prodi
+- 🔗 JOIN antar tabel (Mahasiswa + MK + Nilai + Prodi)
+- CLI table output (rapi & berwarna)
 - File-based storage (`.dat`)
+- Sorting otomatis saat insert
 
 ---
 
 ## 🗄️ Database Structure
 
-- **MAHASISWA** → menyimpan data mahasiswa (NIM, Nama, Prodi)
-- **MK** → menyimpan data mata kuliah (Kode, Nama, SKS)
-- **NILAI** → menyimpan nilai mahasiswa (NIM, Kode MK, Nilai, Grade)
+- **MAHASISWA**
+  - NIM (Primary Key)
+  - Nama
+  - ID Prodi
+  - Kode MK
+
+- **MK**
+  - Kode MK (Primary Key)
+  - Nama MK
+  - SKS
+
+- **NILAI**
+  - NIM
+  - Kode MK
+  - Nilai
+  - Grade  
+  - *(Composite Key: NIM + Kode MK)*
+
+- **PRODI**
+  - ID Prodi (Primary Key)
+  - Nama Prodi
 
 ---
 
 ## 📂 Project Structure
+
 ```bash
 .
 ├── data/
 │   ├── mahasiswa.dat
 │   ├── mk.dat
-│   └── nilai.dat
+│   ├── nilai.dat
+│   └── prodi.dat
 │
 ├── src/
 │   ├── main.c
 │   ├── machine.c
 │   ├── design.c
 │   └── header.h
+│
 ├── preview/
-│   
+│
 ├── QUERY_GUIDE.md
-└── README.md 
-```
---- 
-
-## 🚀 How to Run 
-### Compile
-```bash
-gcc src/main.c src/machine.c src/design.c -o app 
-
-```
-
----
-
-## 📸 Preview
-
-### 🔍 Show Data
-![Show Mahasiswa](preview/SHOW%20MAHASISWA.png)
-
-### ➕ Insert Data
-![Insert Mahasiswa](preview/INSERT%20MAHASISWA.png)
-
-### ✏️ Update Data
-![Update Mahasiswa](preview/UPDATE%20MAHASISWA.png)
-
-### ❌ Delete Data
-![Delete Mahasiswa](preview/DELETE%20Mahasiswa.png)
-
----
-
-## ⚠️ Limitations
-- Tidak menggunakan database nyata (masih file `.dat`)
-- Belum mendukung query kompleks (WHERE, JOIN, dll)
-- Case-sensitive input
-
----
-## 🚀 Future Improvements
-- Add WHERE (search query)
-- Add sorting data
-- Improve CLI UI
----
+└── README.md

@@ -2,16 +2,18 @@
 
 
 int main() {
-    int n = 0, nMK = 0, nNilai = 0, running = 1;
+    int n = 0, nMK = 0, nNilai = 0, running = 1, nProdi = 0;
     mahasiswa dataMhs[100];
     mataKuliah dataMk[100];
     nilai dataNilai[100];
+    prodi dataProdi[100];
     char query[500];
     
     // TAMBAH INI - load data dari file saat startup
     readFileNameMhs(&n, dataMhs, "../data/mahasiswa.dat");
     readFileNameMk(&nMK, dataMk, "../data/mataKuliah.dat");
     readFileNameNilai(&nNilai, dataNilai, "../data/nilai.dat");
+    readFileNameProdi(&nProdi, dataProdi, "../data/prodi.dat");
 
     banner();
     desc();
@@ -23,9 +25,9 @@ int main() {
         query[strcspn(query, "\n")] = 0;
         
         // proses input
-        parseInput(query, &n, &nMK, &nNilai, dataMhs, dataMk, dataNilai, &running);
+        parseInput(query, &n, &nMK, &nNilai, &nProdi, dataMhs, dataMk, dataNilai, dataProdi, &running);
         
     } while (running != 0);
-    
+    printf(KUNING_T BOLD"Terima Kasih\n" RESET);
     return 0;
 }
